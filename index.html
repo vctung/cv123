@@ -1,8 +1,12 @@
 <html>
   <head>
+    <base href="/">
     <title>Curriculum Vitae</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">    
 
+    <link href="app/Assets/styles.css" rel="stylesheet" />
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
     <script src="es6-shim/es6-shim.min.js"></script>
@@ -11,6 +15,12 @@
     <script src="angular2/bundles/angular2-polyfills.js"></script>
     <script src="systemjs/dist/system.src.js"></script>
 
+    <!-- Required for http -->
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    
+    <!-- Required for routing -->
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    
     <!-- 2. Configure SystemJS -->
     <script>
       System.config({
@@ -30,7 +40,7 @@
 
   <!-- 3. Display the application -->
   <body>
-    <my-app>Loading...</my-app>
+    <cv-app>Loading...</cv-app>
   </body>
 
 </html>
