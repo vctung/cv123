@@ -5,6 +5,7 @@ import 'rxjs/Rx';
 import { ROUTER_PROVIDERS, Router, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
 import { HomeComponent } from './Home/home.component';
+import { ProductComponent } from './Product/product.component';
 
 @Component({
     selector: 'cv-app',
@@ -14,7 +15,8 @@ import { HomeComponent } from './Home/home.component';
     providers: [ HTTP_PROVIDERS, ROUTER_PROVIDERS, Title]
 })
 @RouteConfig([
-    { path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true },    
+    { path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true },
+    { path: '/product', name: 'Product', component: ProductComponent }    
 ])
 export class AppComponent {
     pageTitle: string = "Curriculum Vitate";

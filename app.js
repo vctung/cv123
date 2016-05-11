@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
+
 // expose node_modules to client app
 app.use(express.static("./node_modules/"));
 app.use(express.static("./app/"));
@@ -24,10 +25,13 @@ app.use(cookieParser());
 app.use(express.static(__dirname));
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {     
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+app.use(function(req, res, next) {
+  //console.log("ERROR 404");     
+   res.sendFile(path.join(__dirname + '/index.html'));
+   
+  // var err = new Error('Not Found');
+  // err.status = 404;
+  // next(err);
 });
 
 // error handlers
