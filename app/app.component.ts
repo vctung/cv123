@@ -9,6 +9,7 @@ import { ProductComponent } from './Product/product.component';
 import { NavComponent } from './Shared/nav.component';
 import { FooterComponent } from './Shared/footer.component';
 
+
 @Component({
     selector: 'cv-app',
     templateUrl: 'app.component.html',       
@@ -23,7 +24,7 @@ export class AppComponent {
     constructor(private _router:Router, private _title:Title) {
        _router.subscribe((url)=>{ //fires on every URL change
           _title.setTitle(this.getTitleFromUrl(url));
-       });
+       });                 
     }
     
     getTitleFromUrl(url: string): string {       

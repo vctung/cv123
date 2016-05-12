@@ -24,6 +24,10 @@ app.use(cookieParser());
 
 app.use(express.static(__dirname));
 
+//linh -- commend to test api config
+var router = express.Router();
+app.use('/api', router);
+      
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   //console.log("ERROR 404");     
