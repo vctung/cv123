@@ -6,21 +6,20 @@ import { ROUTER_PROVIDERS, Router, RouteConfig, ROUTER_DIRECTIVES } from 'angula
 
 import { HomeComponent } from './Home/home.component';
 import { ProductComponent } from './Product/product.component';
+import { NavComponent } from './Shared/nav.component';
+import { FooterComponent } from './Shared/footer.component';
 
 @Component({
     selector: 'cv-app',
-    templateUrl: 'app.component.html',
-    styleUrls: ['app.component.css'],   
-    directives: [ROUTER_DIRECTIVES],
+    templateUrl: 'app.component.html',       
+    directives: [ROUTER_DIRECTIVES, NavComponent, FooterComponent],
     providers: [ HTTP_PROVIDERS, ROUTER_PROVIDERS, Title]
 })
 @RouteConfig([
     { path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true },
     { path: '/product', name: 'Product', component: ProductComponent }    
 ])
-export class AppComponent {
-    pageTitle: string = "Curriculum Vitate";
-    
+export class AppComponent {        
     constructor(private _router:Router, private _title:Title) {
        _router.subscribe((url)=>{ //fires on every URL change
           _title.setTitle(this.getTitleFromUrl(url));
