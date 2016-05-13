@@ -6,9 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 //var users = require('./routes/users');
-
 var app = express();
-
 
 // expose node_modules to client app
 app.use(express.static("./node_modules/"));
@@ -24,10 +22,12 @@ app.use(cookieParser());
 
 app.use(express.static(__dirname));
 
-//linh -- commend to test api config
-var router = express.Router();
-app.use('/api', router);
-      
+
+// api configuration
+var router = require('./router')(app);
+
+//app.use('/api', router);
+     
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   //console.log("ERROR 404");     

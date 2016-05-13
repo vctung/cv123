@@ -1,0 +1,64 @@
+var express = require('express');
+var router = express.Router();
+var mysql = require("mysql");
+var connection = require("../../config/connection");
+
+// GET api/categories
+router.get('/categories', function (req, res) {
+    // handle a get request to this route
+     //res.send('categories api is working');
+	var query = "SELECT * FROM ??";
+	var table = ["user"];
+	query = mysql.format(query,table);
+	connection.query(query,function(err,rows){
+		res.json(rows);
+		// if(err) {
+		// 	res.json({"Error" : true, "Message" : "Error executing MySQL query"});
+		// } else {
+		// 	res.json({"Error" : false, "Message" : "Success", "Users" : rows});
+		// }
+	});
+});
+
+// POST api/categories
+router.post("/categories",function(req,res){
+	// var query = "INSERT INTO ??(??,??) VALUES (?,?)";
+	// var table = ["user_login","user_email","user_password",req.body.email,md5(req.body.password)];
+	// query = mysql.format(query,table);
+	// connection.query(query,function(err,rows){
+	// 	if(err) {
+	// 		res.json({"Error" : true, "Message" : "Error executing MySQL query"});
+	// 	} else {
+	// 		res.json({"Error" : false, "Message" : "User Added !"});
+	// 	}
+	// });
+});
+
+router.get("/categories/:user_id",function(req,res){
+	var query = "SELECT * FROM ?? WHERE ??=?";
+	var table = ["user","id",req.params.user_id];
+	query = mysql.format(query,table);
+	connection.query(query,function(err,rows){
+		res.json(rows);
+		// if(err) {
+		// 	res.json({"Error" : true, "Message" : "Error executing MySQL query"});
+		// } else {
+		// 	res.json({"Error" : false, "Message" : "Success", "Users" : rows});
+		// }
+	});
+});
+	
+router.put("/categories",function(req,res){
+	// var query = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
+	// var table = ["user_login","user_password",md5(req.body.password),"user_email",req.body.email];
+	// query = mysql.format(query,table);
+	// connection.query(query,function(err,rows){
+	// 	if(err) {
+	// 		res.json({"Error" : true, "Message" : "Error executing MySQL query"});
+	// 	} else {
+	// 		res.json({"Error" : false, "Message" : "Updated the password for email "+req.body.email});
+	// 	}
+	// });
+});
+		
+module.exports = router;
