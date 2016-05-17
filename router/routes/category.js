@@ -3,6 +3,23 @@ var router = express.Router();
 var mysql = require("mysql");
 var connection = require("../../config/connection");
 
+// GET api/popularcategories
+router.get('/popularcategories', function (req, res) {
+    // handle a get request to this route
+     //res.send('categories api is working');
+	var query = "SELECT * FROM ??";
+	var table = ["six_job_category_detail_popular"];
+	query = mysql.format(query,table);
+	connection.query(query,function(err,rows){
+		res.json(rows);
+		// if(err) {
+		// 	res.json({"Error" : true, "Message" : "Error executing MySQL query"});
+		// } else {
+		// 	res.json({"Error" : false, "Message" : "Success", "Users" : rows});
+		// }
+	});
+});
+
 // GET api/categories
 router.get('/categories', function (req, res) {
     // handle a get request to this route

@@ -1,11 +1,12 @@
 import { Component, OnInit } from 'angular2/core';
-import { CategoryService } from '../JOB_CATEGORY/category.service';
+import { CategoryComponent } from '../JOB_CATEGORY/category.component';
 
 @Component({   
-    templateUrl: './Home/home.component.html'
+    templateUrl: './Home/home.component.html',
+    directives: [ CategoryComponent ]
 })
 export class HomeComponent implements OnInit {
-    constructor(private _categoryService: CategoryService){
+    constructor(){
         
     }
     
