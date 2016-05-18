@@ -1,3 +1,7 @@
 {
-    "HOME": "Home"
+    "HOME": "Home",
+    "BROWSE_JOB": "Browse jobs",
+    "RESUME": "Resume",
+    "COMPANY": "Company",
+    "RECENT_JOB": "Recent Jobs"    
 }

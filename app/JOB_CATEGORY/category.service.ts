@@ -1,5 +1,5 @@
-import { Injectable } from 'angular2/core';
-import { Http, Response } from 'angular2/http';
+import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { IPopularCategory } from './popularcategory';
 
@@ -13,7 +13,7 @@ export class CategoryService {
         
         return this._http.get(_popularCatUrl)
             .map((response: Response) => <IPopularCategory[]> response.json())
-          //  .do(data => console.log("All " + JSON.stringify(data)))
+            //.do(data => console.log("All " + JSON.stringify(data)))
             .catch(this.handleError); 
     }
     // getProducts(): Observable<IProduct[]> {

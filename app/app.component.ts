@@ -1,32 +1,34 @@
-import {Component} from 'angular2/core';
-import { HTTP_PROVIDERS } from 'angular2/http';
-import { Title } from 'angular2/platform/browser';
+import {Component} from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import 'rxjs/Rx';
-import { ROUTER_PROVIDERS, Router, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
-
+import { RouteConfig, ROUTER_DIRECTIVES, Router, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import { HomeComponent } from './Home/home.component';
 import { ProductComponent } from './Product/product.component';
 import { NavComponent } from './Shared/nav.component';
 import { FooterComponent } from './Shared/footer.component';
-
+import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
 
 @Component({
     selector: 'cv-app',
-    templateUrl: 'app.component.html',       
+    templateUrl: 'app/app.component.html',       
     directives: [ROUTER_DIRECTIVES, NavComponent, FooterComponent],
-    providers: [ HTTP_PROVIDERS, ROUTER_PROVIDERS, Title]
+    providers: [ ROUTER_PROVIDERS, Title],
+    pipes: [ TranslatePipe ]
 })
 @RouteConfig([
     { path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true },
     { path: '/product', name: 'Product', component: ProductComponent }    
 ])
-export class AppComponent {        
-    constructor(private _router:Router, private _title:Title) {
-       _router.subscribe((url)=>{ //fires on every URL change
-          _title.setTitle(this.getTitleFromUrl(url));
-       });                 
+export class AppComponent {  
+    constructor(private _translate: TranslateService, private _router:Router, private _title:Title) {        
+        console.log(this._translate.getLangs())
+        _translate.use('en');
+        
+        _router.subscribe((url)=>{ //fires on every URL change
+             _title.setTitle(this.getTitleFromUrl(url));
+        });                 
     }
-    
+               
     getTitleFromUrl(url: string): string {       
         switch(url){
             case "home":

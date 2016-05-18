@@ -1,7 +1,7 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 
 @Component({   
-    templateUrl: './Product/product.component.html'
+    templateUrl: 'app/Product/product.component.html'
 })
 export class ProductComponent {
     pageTitle: string = "Product Page";
