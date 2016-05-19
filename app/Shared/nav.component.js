@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var lang_switcher_component_1 = require('./lang-switcher.component');
 var ng2_translate_1 = require('ng2-translate/ng2-translate');
 var NavComponent = (function () {
     function NavComponent(_translate) {
@@ -23,7 +22,7 @@ var NavComponent = (function () {
         core_1.Component({
             selector: 'navigation-app',
             templateUrl: 'app/Shared/nav.component.html',
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES, lang_switcher_component_1.LangSwitcherComponent],
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             pipes: [ng2_translate_1.TranslatePipe]
         }), 
         __metadata('design:paramtypes', [ng2_translate_1.TranslateService])

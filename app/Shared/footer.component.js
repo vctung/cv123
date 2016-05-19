@@ -8,16 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 var core_1 = require('@angular/core');
 var FooterComponent = (function () {
-    function FooterComponent() {
+    function FooterComponent(window) {
     }
+    FooterComponent.prototype.gotoTopPage = function () {
+        window.scrollTo(0, 0);
+    };
     FooterComponent = __decorate([
         core_1.Component({
             selector: 'footer-app',
             templateUrl: 'app/Shared/footer.component.html'
-        }), 
-        __metadata('design:paramtypes', [])
+        }),
+        __param(0, core_1.Inject('window')), 
+        __metadata('design:paramtypes', [Window])
     ], FooterComponent);
     return FooterComponent;
 }());

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component} from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import 'rxjs/Rx';
 import { RouteConfig, ROUTER_DIRECTIVES, Router, ROUTER_PROVIDERS } from '@angular/router-deprecated';
@@ -8,6 +8,7 @@ import { NavComponent } from './Shared/nav.component';
 import { FooterComponent } from './Shared/footer.component';
 import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
 import { LoginComponent } from './Login/login.component';
+
 @Component({
     selector: 'cv-app',
     templateUrl: 'app/app.component.html',       

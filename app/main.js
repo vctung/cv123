@@ -10,6 +10,7 @@ platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [
         useFactory: function (http) { return new ng2_translate_1.TranslateStaticLoader(http, 'Assets/languages', '.json'); },
         deps: [http_1.Http]
     }),
+    core_1.provide('window', { useValue: window }),
     // use TranslateService here, and not TRANSLATE_PROVIDERS (which will define a default TranslateStaticLoader)
     ng2_translate_1.TranslateService
 ]);
