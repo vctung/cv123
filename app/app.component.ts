@@ -7,7 +7,7 @@ import { ProductComponent } from './Product/product.component';
 import { NavComponent } from './Shared/nav.component';
 import { FooterComponent } from './Shared/footer.component';
 import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
-
+import { LoginComponent } from './Login/login.component';
 @Component({
     selector: 'cv-app',
     templateUrl: 'app/app.component.html',       
@@ -17,15 +17,18 @@ import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
 })
 @RouteConfig([
     { path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true },
-    { path: '/product', name: 'Product', component: ProductComponent }    
+    { path: '/product', name: 'Product', component: ProductComponent },
+    { path: '/login', name: 'Login', component: LoginComponent}    
 ])
-export class AppComponent {  
+export class AppComponent {
+    isShowHeaderFooter: boolean = true;
+      
     constructor(private _translate: TranslateService, private _router:Router, private _title:Title) {               
-        _translate.use('en');
-        
+        _translate.use('en'); // as default language is english        
         _router.subscribe((url)=>{ //fires on every URL change
-             _title.setTitle(this.getTitleFromUrl(url));
-        });                 
+             _title.setTitle( _router.currentInstruction.component.routeName);            
+             this.isShowHeaderFooter = (_router.currentInstruction.component.routeName != "Login" && _router.currentInstruction.component.routeName != "Register") 
+        });                            
     }
                
     getTitleFromUrl(url: string): string {       

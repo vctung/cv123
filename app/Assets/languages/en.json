@@ -3,5 +3,8 @@
     "BROWSE_JOB": "Browse jobs",
     "RESUME": "Resume",
     "COMPANY": "Company",
-    "RECENT_JOB": "Recent Jobs"    
+    "RECENT_JOB": "Recent Jobs",
+    "ENGLISH": "English",
+    "VIETNAMESE": "Vietnamese",
+    "LANGUAGE_FLAG": "app/Assets/img/flag/en.png"   
 }

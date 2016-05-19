@@ -1,5 +1,5 @@
-<navigation-app></navigation-app>
+<navigation-app *ngIf="isShowHeaderFooter"></navigation-app>
 <!-- page content -->
 <router-outlet></router-outlet>
 <!-- END page content -->
-<footer-app></footer-app>
+<footer-app *ngIf="isShowHeaderFooter"></footer-app>

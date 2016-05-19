@@ -13,8 +13,12 @@ var router_deprecated_1 = require('@angular/router-deprecated');
 var lang_switcher_component_1 = require('./lang-switcher.component');
 var ng2_translate_1 = require('ng2-translate/ng2-translate');
 var NavComponent = (function () {
-    function NavComponent() {
+    function NavComponent(_translate) {
+        this._translate = _translate;
     }
+    NavComponent.prototype.changeLanguage = function (lang) {
+        this._translate.use(lang);
+    };
     NavComponent = __decorate([
         core_1.Component({
             selector: 'navigation-app',
@@ -22,7 +26,7 @@ var NavComponent = (function () {
             directives: [router_deprecated_1.ROUTER_DIRECTIVES, lang_switcher_component_1.LangSwitcherComponent],
             pipes: [ng2_translate_1.TranslatePipe]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [ng2_translate_1.TranslateService])
     ], NavComponent);
     return NavComponent;
 }());

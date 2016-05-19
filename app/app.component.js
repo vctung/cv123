@@ -17,15 +17,18 @@ var product_component_1 = require('./Product/product.component');
 var nav_component_1 = require('./Shared/nav.component');
 var footer_component_1 = require('./Shared/footer.component');
 var ng2_translate_1 = require('ng2-translate/ng2-translate');
+var login_component_1 = require('./Login/login.component');
 var AppComponent = (function () {
     function AppComponent(_translate, _router, _title) {
         var _this = this;
         this._translate = _translate;
         this._router = _router;
         this._title = _title;
-        _translate.use('en');
+        this.isShowHeaderFooter = true;
+        _translate.use('en'); // as default language is english        
         _router.subscribe(function (url) {
-            _title.setTitle(_this.getTitleFromUrl(url));
+            _title.setTitle(_router.currentInstruction.component.routeName);
+            _this.isShowHeaderFooter = (_router.currentInstruction.component.routeName != "Login" && _router.currentInstruction.component.routeName != "Register");
         });
     }
     AppComponent.prototype.getTitleFromUrl = function (url) {
@@ -46,7 +49,8 @@ var AppComponent = (function () {
         }),
         router_deprecated_1.RouteConfig([
             { path: '/home', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
-            { path: '/product', name: 'Product', component: product_component_1.ProductComponent }
+            { path: '/product', name: 'Product', component: product_component_1.ProductComponent },
+            { path: '/login', name: 'Login', component: login_component_1.LoginComponent }
         ]), 
         __metadata('design:paramtypes', [ng2_translate_1.TranslateService, router_deprecated_1.Router, platform_browser_1.Title])
     ], AppComponent);
