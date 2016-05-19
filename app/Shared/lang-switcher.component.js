@@ -34,7 +34,6 @@ var LangSwitcherComponent = (function () {
             lang = this.supportedLanguages[event.target.selectedIndex].code;
         }
         this._translate.use(lang);
-        console.log(this._translate.currentLang);
     };
     LangSwitcherComponent.prototype.ngOnInit = function () {
     };

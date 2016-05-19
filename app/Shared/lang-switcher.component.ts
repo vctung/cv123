@@ -35,9 +35,7 @@ export class LangSwitcherComponent implements OnInit {
             lang = this.supportedLanguages[event.target.selectedIndex].code; 
         }        
         
-        this._translate.use(lang);
-        
-        console.log(this._translate.currentLang)
+        this._translate.use(lang);            
     }
     
     ngOnInit() { 

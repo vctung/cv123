@@ -6,7 +6,7 @@
     </header>
 
     <div class="category-grid">
-        <a href="job-list-1.html" *ngFor="let jobCategory of jobCategories | categoryFilter:currentLanguage">
+        <a href="job-list-1.html" *ngFor="let jobCategory of jobCategories | categoryFilter:getLang()">
             <i [class]="jobCategory.category_icon"></i>
             <h6>{{ jobCategory.category_name }}</h6>
             <p>{{ jobCategory.category_description }}</p>

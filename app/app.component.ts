@@ -20,8 +20,7 @@ import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
     { path: '/product', name: 'Product', component: ProductComponent }    
 ])
 export class AppComponent {  
-    constructor(private _translate: TranslateService, private _router:Router, private _title:Title) {        
-        console.log(this._translate.getLangs())
+    constructor(private _translate: TranslateService, private _router:Router, private _title:Title) {               
         _translate.use('en');
         
         _router.subscribe((url)=>{ //fires on every URL change

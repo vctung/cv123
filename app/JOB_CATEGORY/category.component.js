@@ -17,13 +17,13 @@ var CategoryComponent = (function () {
         this._categoryService = _categoryService;
         this._translate = _translate;
     }
+    CategoryComponent.prototype.getLang = function () {
+        return this._translate.currentLang;
+    };
     CategoryComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._categoryService.getPopularCategories()
             .subscribe(function (jobCategories) { return _this.jobCategories = jobCategories; }, function (error) { return _this.errorMessage = error; });
-        this.currentLanguage = this._translate.currentLang;
-    };
-    CategoryComponent.prototype.ngOnChanges = function () {
         this.currentLanguage = this._translate.currentLang;
     };
     CategoryComponent = __decorate([

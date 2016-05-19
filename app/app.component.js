@@ -23,7 +23,6 @@ var AppComponent = (function () {
         this._translate = _translate;
         this._router = _router;
         this._title = _title;
-        console.log(this._translate.getLangs());
         _translate.use('en');
         _router.subscribe(function (url) {
             _title.setTitle(_this.getTitleFromUrl(url));

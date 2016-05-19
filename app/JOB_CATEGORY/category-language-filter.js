@@ -13,16 +13,7 @@ var CategoryLanguagePipe = (function () {
     function CategoryLanguagePipe() {
     }
     CategoryLanguagePipe.prototype.transform = function (value, args) {
-        //console.log(this._translate.currentLang);
         var filter = args[0] ? args[0].toLocaleLowerCase() : 'en';
-        console.log(filter);
-        console.log(value);
-        //  return filter ? value.filter((category: IPopularCategory) => 
-        // category.language_id == 1) : value;
-        var result = value.filter(function (category) {
-            return category.language_culture.toLocaleLowerCase().indexOf(filter) > -1;
-        });
-        console.log(result);
         return filter ? value.filter(function (category) {
             return category.language_culture.toLocaleLowerCase().indexOf(filter) > -1;
         }) : value;
