@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var LoginComponent = (function () {
     function LoginComponent() {
     }
@@ -16,7 +17,8 @@ var LoginComponent = (function () {
     LoginComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            templateUrl: 'login.component.html'
+            templateUrl: 'login.component.html',
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
     ], LoginComponent);

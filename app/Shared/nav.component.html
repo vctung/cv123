@@ -16,7 +16,7 @@
         
         <!-- User account -->
         <div class="pull-right user-login">
-            <a class="btn btn-sm btn-primary" [routerLink]="['Login']">Login</a> or <a href="user-register.html">register</a>           
+            <a class="btn btn-sm btn-primary" [routerLink]="['Login']">Login</a> or <a [routerLink]="['Register']">register</a>           
         </div>
         <!-- END User account -->
 
@@ -26,20 +26,20 @@
                 <a class="active" [routerLink]="['Home']">{{ 'HOME' | translate }}</a>            
             </li>
             <li>
-                <a [routerLink]="['Product']">{{ 'BROWSE_JOB' | translate }}</a>          
+                <a [routerLink]="['JobList']">{{ 'BROWSE_JOB' | translate }}</a>          
             </li>
             <li>
                 <a href="#">{{ 'RESUME' | translate }}</a>
             <ul>
-                <li><a href="resume-list.html">Browse resumes</a></li>
-                <li><a href="resume-manage.html">Manage resumes</a></li>
+                <li><a [routerLink]="['ResumeList']">Browse resumes</a></li>
+                <li><a [routerLink]="['ResumeManage']">Manage resumes</a></li>
             </ul>
             </li>
             <li>
-                <a href="#">{{ 'COMPANY' | translate }}</a>
+                <a>{{ 'COMPANY' | translate }}</a>
                 <ul>
-                    <li><a href="company-list.html">Browse companies</a></li>              
-                    <li><a href="company-manage.html">Manage companies</a></li>
+                    <li><a [routerLink]="['CompanyList']">Browse companies</a></li>              
+                    <li><a [routerLink]="['CompanyManage']">Manage companies</a></li>
                 </ul>
             </li> 
             <li class="language-swicher">

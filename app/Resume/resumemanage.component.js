@@ -9,17 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ProductComponent = (function () {
-    function ProductComponent() {
-        this.pageTitle = "Product Page";
+var ResumeManageComponent = (function () {
+    function ResumeManageComponent() {
     }
-    ProductComponent = __decorate([
+    ResumeManageComponent.prototype.ngOnInit = function () { };
+    ResumeManageComponent = __decorate([
         core_1.Component({
-            templateUrl: 'app/Product/product.component.html'
+            moduleId: module.id,
+            templateUrl: 'resumemanage.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], ProductComponent);
-    return ProductComponent;
+    ], ResumeManageComponent);
+    return ResumeManageComponent;
 }());
-exports.ProductComponent = ProductComponent;
-//# sourceMappingURL=product.component.js.map
+exports.ResumeManageComponent = ResumeManageComponent;
+//# sourceMappingURL=resumemanage.component.js.map
