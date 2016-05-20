@@ -1,18 +1,20 @@
 var express = require('express');
 var router = express.Router();
-var mysql = require("mysql");
+//var mysql = require("mysql");
 var connection = require("../../config/connection");
 
 // GET api/popularcategories
 router.get('/popularcategories', function (req, res) {
-	var query = "SELECT * FROM ??";
-	var table = ["six_job_category_detail_popular"];
-	query = mysql.format(query,table);
-	connection.query(query, function(err, results){
+	// var query = "SELECT * FROM ??";
+	// var table = ["six_job_category_detail_popular"];
+	// query = mysql.format(query,table);
+	var sql = "SELECT * FROM six_job_category_detail_popular";
+	connection.query(sql, [], function(err, results){
 		if(err){
 			console.log(err);
 		}
 		else{
+			console.log(results);
 			res.json(results);
 		}
   	});
